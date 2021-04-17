@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'core',
+    'posts',
 ]
 
 AUTH_USER_MODEL = 'accounts.User'
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'core.middleware.UpdateLastRequestMiddleware'
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -182,4 +184,4 @@ sudo rabbitmqctl set_permissions -p starnavi_vhost starnavi ".*" ".*" ".*"
 sudo rabbitmqctl stop_app
 sudo rabbitmqctl reset
 sudo rabbitmqctl start_app
-""" 
+"""
